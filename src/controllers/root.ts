@@ -12,7 +12,7 @@ export default class RootController {
     const tx = await streetCredLedger.addRoots(
       addresses.map((tokenAddress) => ({
         tokenAddress,
-        merkleRoot: utils.hexZeroPad('0x0', 32),
+        merkleRoot: utils.hexZeroPad('0x1', 32),
       }))
     )
     await tx.wait()
