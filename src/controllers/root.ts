@@ -1,4 +1,4 @@
-import { Body, Controller, Flow, Get, Post } from 'amala'
+import { Body, Controller, Delete, Flow, Get, Post } from 'amala'
 import { utils } from 'ethers'
 import AddressBody from '@/validators/AddressBody'
 import authenticate from '@/middlewares/authenticate'
@@ -16,6 +16,15 @@ export default class RootController {
       }))
     )
     await tx.wait()
+  }
+
+  @Delete('/remove-root')
+  @Flow(authenticate)
+  async deleteRoot(@Body({ required: true }) { addresses }: AddressBody) {
+    for (const address of addresses) {
+      const tx = await streetCredLedger.deleteRoot(address)
+      await tx.wait()
+    }
   }
 
   @Get('/contract-address')
