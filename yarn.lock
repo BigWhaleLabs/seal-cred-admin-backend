@@ -5,6 +5,13 @@ __metadata:
   version: 5
   cacheKey: 8
 
+"@big-whale-labs/street-cred-ledger-contract@npm:^0.0.7":
+  version: 0.0.7
+  resolution: "@big-whale-labs/street-cred-ledger-contract@npm:0.0.7"
+  checksum: 16363726335c991d6f4e5fc2dba3c538793bee1c619f200dc6cee53db39253ad747644a848a25fd9496da4bea62cb012db821dc8401a0b290c7adceb4294f446
+  languageName: node
+  linkType: hard
+
 "@eslint/eslintrc@npm:^1.2.1":
   version: 1.2.1
   resolution: "@eslint/eslintrc@npm:1.2.1"
@@ -3210,6 +3217,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "street-cred-admin-backend@workspace:."
   dependencies:
+    "@big-whale-labs/street-cred-ledger-contract": ^0.0.7
     "@hapi/boom": ^9.1.4
     "@koa/cors": ^3.3.0
     "@types/koa": ^2.13.4

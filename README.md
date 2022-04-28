@@ -1,6 +1,7 @@
 # StreetCred admin backend
 
 - Allows adding new merkle roots
+- Returns the address of the contract
 
 ## Installation and local launch
 
