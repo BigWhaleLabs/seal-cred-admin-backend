@@ -18,9 +18,9 @@ export default class RootController {
     await tx.wait()
   }
 
-  @Delete('/remove-root')
+  @Delete('/remove-roots')
   @Flow(authenticate)
-  async deleteRoot(@Body({ required: true }) { addresses }: AddressBody) {
+  async deleteRoots(@Body({ required: true }) { addresses }: AddressBody) {
     for (const address of addresses) {
       const tx = await streetCredLedger.deleteRoot(address)
       await tx.wait()
