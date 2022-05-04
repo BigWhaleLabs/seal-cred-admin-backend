@@ -22,5 +22,6 @@ And you should be good to go! Feel free to fork and submit pull requests.
 | `ETH_NETWORK`                | Ethereum network to connect to           |
 | `INFURA_ID`                  | Infura ID to connect to                  |
 | `PASSWORD`                   | Password for protected routes            |
+| `ETHERSCAN_API_KEY`          | Etherscan API key                        |
 
 Also, please, consider looking at `.env.sample`.

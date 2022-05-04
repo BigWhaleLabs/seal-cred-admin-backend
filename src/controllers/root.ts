@@ -17,9 +17,9 @@ export default class RootController {
         merkleRoot: utils.hexZeroPad('0x1', 32),
       }))
     )
-    const minedTx = await tx.wait()
-    await delay(60000)
-    verifyDerivative(minedTx)
+    const completedTx = await tx.wait()
+    await delay(60) // wait for the etherscan to update
+    await verifyDerivative(completedTx)
   }
 
   @Delete('/remove-roots')
