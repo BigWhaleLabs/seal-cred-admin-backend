@@ -2,7 +2,9 @@ import { Body, Controller, Delete, Flow, Get, Post } from 'amala'
 import { utils } from 'ethers'
 import AddressBody from '@/validators/AddressBody'
 import authenticate from '@/middlewares/authenticate'
+import delay from '@/helpers/delay'
 import streetCredLedger from '@/helpers/streetCredLedger'
+import verifyDerivative from '@/helpers/verifyDerivative'
 
 @Controller('/')
 export default class RootController {
@@ -15,7 +17,9 @@ export default class RootController {
         merkleRoot: utils.hexZeroPad('0x1', 32),
       }))
     )
-    await tx.wait()
+    const minedTx = await tx.wait()
+    await delay(60000)
+    verifyDerivative(minedTx)
   }
 
   @Delete('/remove-roots')
