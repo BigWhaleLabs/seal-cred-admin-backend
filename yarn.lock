@@ -5,10 +5,10 @@ __metadata:
   version: 5
   cacheKey: 8
 
-"@big-whale-labs/street-cred-ledger-contract@npm:^0.0.7":
-  version: 0.0.7
-  resolution: "@big-whale-labs/street-cred-ledger-contract@npm:0.0.7"
-  checksum: 16363726335c991d6f4e5fc2dba3c538793bee1c619f200dc6cee53db39253ad747644a848a25fd9496da4bea62cb012db821dc8401a0b290c7adceb4294f446
+"@big-whale-labs/street-cred-ledger-contract@npm:^0.0.8":
+  version: 0.0.8
+  resolution: "@big-whale-labs/street-cred-ledger-contract@npm:0.0.8"
+  checksum: 9a3b1b180df86b0236c73410b7fd670721090eed2c6de673905407dc6702038a8f7ca39040c60cbed80f881385ac67dc7ce42b985b104944ce7c0a6ae121d739
   languageName: node
   linkType: hard
 
@@ -3287,7 +3287,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "street-cred-admin-backend@workspace:."
   dependencies:
-    "@big-whale-labs/street-cred-ledger-contract": ^0.0.7
+    "@big-whale-labs/street-cred-ledger-contract": ^0.0.8
     "@ethersproject/abi": ^5.6.1
     "@hapi/boom": ^9.1.4
     "@koa/cors": ^3.3.0
