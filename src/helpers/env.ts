@@ -11,7 +11,6 @@ export default cleanEnv(process.env, {
   CONTRACT_ADDRESS: str(),
   CONTRACT_OWNER_PRIVATE_KEY: str(),
   ETH_NETWORK: str(),
-  ETHERSCAN_API: str(),
   ETHERSCAN_API_KEY: str(),
   INFURA_ID: str(),
   PASSWORD: str(),

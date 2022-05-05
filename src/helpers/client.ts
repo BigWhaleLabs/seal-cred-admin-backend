@@ -1,8 +1,7 @@
 import axios from 'axios'
-import env from '@/helpers/env'
 
 const etherscanClient = axios.create({
-  baseURL: env.ETHERSCAN_API,
+  baseURL: 'https://api.etherscan.io/api',
   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 })
 

@@ -2,13 +2,13 @@ import {
   EtherscanVerifyResponse,
   toVerifyRequest,
 } from '@/etherscan/EtherscanVerifyContractRequest'
-import etherscanClient from '@/etherscan/etherscanClient'
+import etherscanClient from '@/helpers/client'
 
-export default function verifyContract(params: {
-  contractAddress: string
+export default function verifyContract(
+  contractAddress: string,
   constructorArguments: string
-}): Promise<EtherscanVerifyResponse> {
-  const request = toVerifyRequest(params)
+): Promise<EtherscanVerifyResponse> {
+  const request = toVerifyRequest(contractAddress, constructorArguments)
   const parameters = new URLSearchParams({ ...request })
 
   return etherscanClient.post('', parameters)

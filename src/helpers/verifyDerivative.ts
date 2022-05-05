@@ -1,46 +1,18 @@
-import { ContractReceipt, Event } from 'ethers'
-import { utils } from 'ethers'
-import constructorEncoder from '@/helpers/constructorEncoder'
-import verifyContract from '@/etherscan/verifyContract'
+import { ContractReceipt } from 'ethers'
+import serializeVerifyParameters from '@/helpers/serializeVerifyParameters'
+import verifyContract from '@/helpers/verifyContract'
 
 export default function verifyDerivative(tx: ContractReceipt) {
-  const data = serializeVerifyParams(tx.events!)
-
-  data.forEach(async (param) => {
-    const response = await verifyContract(param)
-
-    if (response.data.status === '1') {
+  if (!tx.events) {
+    throw new Error('No events found in transaction')
+  }
+  const data = serializeVerifyParameters(tx.events)
+  return Promise.all(
+    data.map(async ({ contractAddress, constructorArguments }) => {
+      await verifyContract(contractAddress, constructorArguments)
       console.log(
-        `Successfully submitted source code for contract ${param.contractAddress} for verification on the block explorer. Waiting for verification result...`
+        `Successfully submitted source code for contract ${contractAddress} for verification on the block explorer`
       )
-    } else {
-      console.log(
-        `Something went wrong with the contract ${param.contractAddress} verification`
-      )
-    }
-  })
-}
-
-function serializeVerifyParams(
-  events: Event[]
-): Array<{ contractAddress: string; constructorArguments: string }> {
-  const createDerivativeEvents = events?.filter(
-    (event: Event) => event.event === undefined
+    })
   )
-
-  const eventsData = createDerivativeEvents.map((event: Event) =>
-    utils.defaultAbiCoder.decode(
-      ['address', 'address', 'address', 'string', 'string', 'address'],
-      event.data
-    )
-  )
-
-  const serialized = eventsData.map((data) => {
-    return {
-      contractAddress: data[0],
-      constructorArguments: constructorEncoder([...data.slice(1, 6)]),
-    }
-  })
-
-  return serialized
 }
