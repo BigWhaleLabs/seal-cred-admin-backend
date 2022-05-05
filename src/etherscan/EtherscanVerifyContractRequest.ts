@@ -46,14 +46,3 @@ export function toVerifyRequest(params: {
     sourceCode: JSON.stringify(SCERC721Derivative),
   }
 }
-
-export function toCheckStatusRequest(params: {
-  guid: string
-}): EtherscanCheckStatusRequest {
-  return {
-    apikey: env.ETHERSCAN_API_KEY,
-    module: 'contract',
-    action: 'checkverifystatus',
-    guid: params.guid,
-  }
-}

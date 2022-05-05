@@ -1,38 +1,22 @@
 import { ContractReceipt, Event } from 'ethers'
-import { pingVerificationStatus } from '@/etherscan/EtherscanService'
-import { toCheckStatusRequest } from '@/etherscan/EtherscanVerifyContractRequest'
 import { utils } from 'ethers'
-import { verifyContract } from '@/etherscan/verifyContract.api'
 import constructorEncoder from '@/helpers/constructorEncoder'
+import verifyContract from '@/etherscan/verifyContract'
 
 export default function verifyDerivative(tx: ContractReceipt) {
   const data = serializeVerifyParams(tx.events!)
 
   data.forEach(async (param) => {
-    console.log(param)
     const response = await verifyContract(param)
-    console.log(response.data)
-    console.log(
-      `Successfully submitted source code for contract ${param.contractAddress} for verification on the block explorer. Waiting for verification result...`
-    )
 
-    const pollRequest = toCheckStatusRequest({
-      guid: response.data.result,
-    })
-    console.log(pollRequest)
-
-    const verificationStatus = await pingVerificationStatus(pollRequest)
-    console.log('verificationStatus', verificationStatus)
-
-    if (verificationStatus.isPending()) {
-      return pingVerificationStatus(pollRequest)
-    }
-
-    if (
-      verificationStatus.isVerificationFailure() ||
-      verificationStatus.isVerificationSuccess()
-    ) {
-      return verificationStatus
+    if (response.data.status === '1') {
+      console.log(
+        `Successfully submitted source code for contract ${param.contractAddress} for verification on the block explorer. Waiting for verification result...`
+      )
+    } else {
+      console.log(
+        `Something went wrong with the contract ${param.contractAddress} verification`
+      )
     }
   })
 }
