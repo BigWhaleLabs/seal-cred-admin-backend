@@ -20,7 +20,7 @@ And you should be good to go! Feel free to fork and submit pull requests.
 | `CONTRACT_ADDRESS`           | Address of the contract                  |
 | `CONTRACT_OWNER_PRIVATE_KEY` | Private key of the contract owner        |
 | `ETH_NETWORK`                | Ethereum network to connect to           |
-| `INFURA_ID`                  | Infura ID to connect to                  |
+| `ETH_WS`                     | Ethereum node websocket URI              |
 | `PASSWORD`                   | Password for protected routes            |
 | `ETHERSCAN_API_KEY`          | Etherscan API key                        |
 
