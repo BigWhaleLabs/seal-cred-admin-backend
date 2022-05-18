@@ -14,14 +14,14 @@ And you should be good to go! Feel free to fork and submit pull requests.
 
 ## Environment variables
 
-| Name                         | Description                              |
-| ---------------------------- | ---------------------------------------- |
-| `PORT`                       | Port to run server on (defaults to 1337) |
-| `CONTRACT_ADDRESS`           | Address of the contract                  |
-| `CONTRACT_OWNER_PRIVATE_KEY` | Private key of the contract owner        |
-| `ETH_NETWORK`                | Ethereum network to connect to           |
-| `ETH_WS`                     | Ethereum node websocket URI              |
-| `PASSWORD`                   | Password for protected routes            |
-| `ETHERSCAN_API_KEY`          | Etherscan API key                        |
+| Name                         | Description                                                 |
+| ---------------------------- | ----------------------------------------------------------- |
+| `PORT`                       | Port to run server on (defaults to 1337)                    |
+| `ETH_NETWORK`                | Ethereum network to connect to (defaults to @bwl/constants) |
+| `ETH_RPC`                    | Ethereum node RPC URI (defaults to @bwl/constants)          |
+| `SCLEDGER_CONTRACT_ADDRESS`  | Address of the contract (defaults to @bwl/constants)        |
+| `CONTRACT_OWNER_PRIVATE_KEY` | Private key of the contract owner                           |
+| `PASSWORD`                   | Password for protected routes                               |
+| `ETHERSCAN_API_KEY`          | Etherscan API key                                           |
 
 Also, please, consider looking at `.env.sample`.
