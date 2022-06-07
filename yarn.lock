@@ -19,13 +19,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@big-whale-labs/seal-cred-ledger-contract@npm:^0.0.4-4":
-  version: 0.0.4-4
-  resolution: "@big-whale-labs/seal-cred-ledger-contract@npm:0.0.4-4"
+"@big-whale-labs/seal-cred-ledger-contract@npm:^0.0.4":
+  version: 0.0.4
+  resolution: "@big-whale-labs/seal-cred-ledger-contract@npm:0.0.4"
   dependencies:
     "@big-whale-labs/constants": ^0.0.5
     prompt-sync: ^4.2.0
-  checksum: 32711de703d011c63d7a7f76aa6348d64c03a4bba8dbc8b71759b2b5d651a033587c9b9c0f8d849569257c0c8203f3648dfa9813cea207b2b6a20798848f2252
+  checksum: aff747ca6333c002cadc5944a5035891b704a4ee29387008718f733bec6ec28d5d7837271b91a9e40699ab89f565205f3a73c21f49667b32b23d6641a221a951
   languageName: node
   linkType: hard
 
@@ -3253,7 +3253,7 @@ __metadata:
   resolution: "seal-cred-admin-backend@workspace:."
   dependencies:
     "@big-whale-labs/constants": ^0.0.8
-    "@big-whale-labs/seal-cred-ledger-contract": ^0.0.4-4
+    "@big-whale-labs/seal-cred-ledger-contract": ^0.0.4
     "@ethersproject/abi": ^5.6.2
     "@hapi/boom": ^10.0.0
     "@koa/cors": ^3.3.0
