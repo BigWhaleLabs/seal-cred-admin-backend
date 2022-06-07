@@ -5,6 +5,13 @@ __metadata:
   version: 5
   cacheKey: 8
 
+"@big-whale-labs/constants@npm:^0.0.5":
+  version: 0.0.5
+  resolution: "@big-whale-labs/constants@npm:0.0.5"
+  checksum: 9e4222f01cfeede87da4bed0dfd408d643af48a584ff63a9fed1cd1ec94ff810e40c9fdba62268e8acebfea4443d58dd556d7154e8e72c0864fea5c2846a007b
+  languageName: node
+  linkType: hard
+
 "@big-whale-labs/constants@npm:^0.0.8":
   version: 0.0.8
   resolution: "@big-whale-labs/constants@npm:0.0.8"
@@ -12,10 +19,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@big-whale-labs/seal-cred-ledger-contract@npm:^0.0.3":
-  version: 0.0.3
-  resolution: "@big-whale-labs/seal-cred-ledger-contract@npm:0.0.3"
-  checksum: 4f68e3171606f7cb42fc11717f5a251c74d8ab1e9ffdba183171826bed73f9946f70bd6ebfe2b1b9517de5bf7bf4dbec200d6ff5916803eaa53bf0078745d814
+"@big-whale-labs/seal-cred-ledger-contract@npm:^0.0.4":
+  version: 0.0.4
+  resolution: "@big-whale-labs/seal-cred-ledger-contract@npm:0.0.4"
+  dependencies:
+    "@big-whale-labs/constants": ^0.0.5
+    prompt-sync: ^4.2.0
+  checksum: aff747ca6333c002cadc5944a5035891b704a4ee29387008718f733bec6ec28d5d7837271b91a9e40699ab89f565205f3a73c21f49667b32b23d6641a221a951
   languageName: node
   linkType: hard
 
@@ -986,6 +996,13 @@ __metadata:
     reflect-metadata: "*"
     ts-morph: ^13.0.3
   checksum: 4a7cfd0f5721a66cc737c879368e8ac2c81452040161999cadd327810bb5d99a026858502dac5a7b12c8845c8843dc478ea68162169fa6231898d8c28c7f2463
+  languageName: node
+  linkType: hard
+
+"ansi-regex@npm:^4.1.0":
+  version: 4.1.1
+  resolution: "ansi-regex@npm:4.1.1"
+  checksum: b1a6ee44cb6ecdabaa770b2ed500542714d4395d71c7e5c25baa631f680fb2ad322eb9ba697548d498a6fd366949fc8b5bfcf48d49a32803611f648005b01888
   languageName: node
   linkType: hard
 
@@ -3063,6 +3080,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prompt-sync@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "prompt-sync@npm:4.2.0"
+  dependencies:
+    strip-ansi: ^5.0.0
+  checksum: b14dfb7d2520f384324b49a64c033e92cf2889e34a148037d66b0b89e43f530a93344aebf57c4abe3ae4e351080e22388f7141ea0fbc56b1b9a7f152d5d4a423
+  languageName: node
+  linkType: hard
+
 "ps-tree@npm:^1.2.0":
   version: 1.2.0
   resolution: "ps-tree@npm:1.2.0"
@@ -3227,7 +3253,7 @@ __metadata:
   resolution: "seal-cred-admin-backend@workspace:."
   dependencies:
     "@big-whale-labs/constants": ^0.0.8
-    "@big-whale-labs/seal-cred-ledger-contract": ^0.0.3
+    "@big-whale-labs/seal-cred-ledger-contract": ^0.0.4
     "@ethersproject/abi": ^5.6.2
     "@hapi/boom": ^10.0.0
     "@koa/cors": ^3.3.0
@@ -3397,6 +3423,15 @@ __metadata:
     define-properties: ^1.1.4
     es-abstract: ^1.19.5
   checksum: a4857c5399ad709d159a77371eeaa8f9cc284469a0b5e1bfe405de16f1fd4166a8ea6f4180e55032f348d1b679b1599fd4301fbc7a8b72bdb3e795e43f7b1048
+  languageName: node
+  linkType: hard
+
+"strip-ansi@npm:^5.0.0":
+  version: 5.2.0
+  resolution: "strip-ansi@npm:5.2.0"
+  dependencies:
+    ansi-regex: ^4.1.0
+  checksum: bdb5f76ade97062bd88e7723aa019adbfacdcba42223b19ccb528ffb9fb0b89a5be442c663c4a3fb25268eaa3f6ea19c7c3fbae830bd1562d55adccae1fcec46
   languageName: node
   linkType: hard
 
