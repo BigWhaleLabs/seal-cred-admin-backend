@@ -1,4 +1,4 @@
-import * as SCERC721Derivative from '@/models/SCERC721Derivative.json'
+import { SCERC721DerivativeConfig } from '@big-whale-labs/seal-cred-ledger-contract'
 import client from '@/helpers/client'
 import env from '@/helpers/env'
 
@@ -15,7 +15,7 @@ const verifyContract = (
     contractname: 'contracts/SCERC721Derivative.sol:SCERC721Derivative',
     compilerversion: 'v0.8.4+commit.c7e474f2',
     constructorArguements: constructorArguments,
-    sourceCode: JSON.stringify(SCERC721Derivative),
+    sourceCode: JSON.stringify(SCERC721DerivativeConfig),
   }
   const parameters = new URLSearchParams({ ...request })
   return client.post<{
